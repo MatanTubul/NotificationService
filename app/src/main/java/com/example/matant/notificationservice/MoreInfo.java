@@ -101,6 +101,7 @@ public class MoreInfo extends Activity {
                 row.addView(age);
                 //add the new row to table
                 tl.addView(row,new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT));
+                //the new row was added
             }
             Log.i("Check4","parsing the json");
         } catch (JSONException e) {
