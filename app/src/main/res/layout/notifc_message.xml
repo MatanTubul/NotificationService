@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="243dp"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/table"
+        android:showDividers="middle|beginning|end|none"
+        android:baselineAligned="false"
+        android:clickable="false"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff0effee"
+            android:layout_margin="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="ID"
+                android:id="@+id/textViewID"
+                android:layout_column="0"
+                android:background="@drawable/border"
+                android:textColor="#ffffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Name"
+                android:id="@+id/textViewName"
+
+                android:background="@drawable/border"
+                android:textColor="#ffffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Age"
+                android:id="@+id/textViewAge"
+                android:background="@drawable/border"
+                android:textColor="#ffffffff" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
