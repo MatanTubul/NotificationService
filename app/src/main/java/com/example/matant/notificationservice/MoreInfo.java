@@ -3,9 +3,6 @@ package com.example.matant.notificationservice;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -23,7 +20,6 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.lang.String;
 
 /**
@@ -42,11 +38,11 @@ public class MoreInfo extends Activity {
 
     }
     public void getData(){
-        String res = "";
+
         InputStream isr = null;
         try{
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://10.0.2.2:80/android/users.php");
+            HttpPost httppost = new HttpPost("http://10.0.2.2/android/users.php");
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             isr = entity.getContent();
@@ -59,11 +55,12 @@ public class MoreInfo extends Activity {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine())!= null){
-                Log.i("print:",line);
+
                 sb.append(line+ "\n");
             }
             isr.close();
             result = sb.toString();
+            Log.d("result",result);
         } catch (Exception  e) {
             Log.e("log_tag", "Error in Convert " + e.toString());
         }
@@ -101,7 +98,7 @@ public class MoreInfo extends Activity {
                 row.addView(age);
                 //add the new row to table
                 tl.addView(row,new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT));
-                //the new row was added
+
             }
             Log.i("Check4","parsing the json");
         } catch (JSONException e) {
